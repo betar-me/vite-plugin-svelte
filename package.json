@@ -1,6 +1,6 @@
 {
   "version": "7.0.0",
-  "name": "rollup-plugin-svelte",
+  "name": "vite-plugin-svelte",
   "description": "Compile Svelte components with Rollup",
   "repository": "sveltejs/rollup-plugin-svelte",
   "main": "index.js",

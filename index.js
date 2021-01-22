@@ -57,7 +57,7 @@ module.exports = function (options = {}) {
 		/**
 		 * Resolve an import's full filepath.
 		 */
-		resolveId(importee, importer) {
+		resolveId(importee, importer, options, ssr) {
 			if (cache_emit.has(importee)) return importee;
 			if (!importer || importee[0] === '.' || importee[0] === '\0' || path.isAbsolute(importee)) return null;
 
@@ -117,6 +117,7 @@ module.exports = function (options = {}) {
 				code = processed.code;
 			}
 
+			svelte_options.generate = ssr ? 'ssr' : 'dom';
 			const compiled = compile(code, svelte_options);
 
 			(compiled.warnings || []).forEach(warning => {
