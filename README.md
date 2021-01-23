@@ -1,7 +1,13 @@
-# rollup-plugin-svelte [![CI](https://github.com/sveltejs/rollup-plugin-svelte/workflows/CI/badge.svg)](https://github.com/sveltejs/rollup-plugin-svelte/actions)
+# vite-plugin-svelte [![CI](https://github.com/benmccann/vite-plugin-svelte/workflows/CI/badge.svg)](https://github.com/benmccann/vite-plugin-svelte/actions)
 
 Compile Svelte components.
 
+## Compared to rollup-plugin-svelte
+
+This code is mostly copied from `rollup-plugin-svelte`. This plugin does two things differently:
+
+1. integrates `svelte-hmr`
+1. extends the Rollup plugin interface with the [Vite plugin interface](https://github.com/vitejs/vite/blob/main/packages/vite/src/node/plugin.ts) to add an `ssr` option
 
 ## Installation
 
