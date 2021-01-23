@@ -93,7 +93,7 @@ module.exports = function (options = {}) {
 		 * Returns CSS contents for a file, if ours
 		 */
 		load(id, ssr) {
-if (id.includes('?')) console.log(`load called with unexpected id ${id}`);
+if (id.includes('?')) throw new Error(`load called with unexpected id ${id}`);
 			return cache_emit.get(id) || null;
 		},
 
@@ -102,7 +102,7 @@ if (id.includes('?')) console.log(`load called with unexpected id ${id}`);
 		 * NOTE: If `emitCss`, append static `import` to virtual CSS file.
 		 */
 		async transform(code, id, ssr) {
-if (id.includes('?')) console.log(`transform called with unexpected id ${id}`);
+if (id.includes('?')) throw new Error(`transform called with unexpected id ${id}`);
 			if (!filter(id)) return null;
 
 			const extension = path.extname(id);
