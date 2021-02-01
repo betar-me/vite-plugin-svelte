@@ -132,7 +132,7 @@ module.exports = function (options = {}) {
 				cache_emit.set(fname, compiled.css);
 			}
 
-			if (makeHot) {
+			if (makeHot && !ssr) {
 				compiled.js.code = makeHot({
 					id,
 					compiledCode: compiled.js.code,
